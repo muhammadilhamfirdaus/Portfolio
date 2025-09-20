@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio M Ilham Firdaus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Poppins sebagai default */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #100321;
+            padding-top: 80px;
+            /* Memberi ruang untuk fixed navbar */
+        }
+
+        /* Custom scrollbar for modal content if needed */
+        .modal-content-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content-scroll::-webkit-scrollbar-track {
+            background: #100321;
+            border-radius: 10px;
+        }
+
+        .modal-content-scroll::-webkit-scrollbar-thumb {
+            background: #6D28D9;
+            border-radius: 10px;
+        }
+
+        /* Animasi untuk orbit */
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+            }
+        }
+
+        .orbit-item {
+            animation: orbit var(--duration) linear infinite;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200">
+
+    <div class="container mx-auto px-8 md:px-16">
+        <header class="fixed top-0 left-0 w-full bg-[#1a0033]/70 backdrop-blur-md shadow z-50">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+                <a href="#home" class="text-lg font-bold text-purple-400">MIF</a>
+
+                <nav class="hidden md:flex">
+                    <ul class="flex items-center space-x-8 text-sm md:text-base">
+                        <li><a href="#home" class="hover:text-purple-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="#tentang" class="hover:text-purple-400 transition-colors duration-300">Tentang</a>
+                        </li>
+                        <li><a href="#pengalaman"
+                                class="hover:text-purple-400 transition-colors duration-300">Pengalaman</a></li>
+                        <li><a href="#skill" class="hover:text-purple-400 transition-colors duration-300">Skill</a></li>
+                        <li><a href="#portfolio"
+                                class="hover:text-purple-400 transition-colors duration-300">Portfolio</a></li>
+                        <li><a href="#kontak" class="hover:text-purple-400 transition-colors duration-300">Kontak</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden bg-[#1a0033]/90 backdrop-blur-md">
+                <ul class="flex flex-col items-center space-y-6 py-6 text-base">
+                    <li><a href="#home" class="nav-link hover:text-purple-400 transition-colors duration-300">Home</a>
+                    </li>
+                    <li><a href="#tentang"
+                            class="nav-link hover:text-purple-400 transition-colors duration-300">Tentang</a></li>
+                    <li><a href="#pengalaman"
+                            class="nav-link hover:text-purple-400 transition-colors duration-300">Pengalaman</a></li>
+                    <li><a href="#skill" class="nav-link hover:text-purple-400 transition-colors duration-300">Skill</a>
+                    </li>
+                    <li><a href="#portfolio"
+                            class="nav-link hover:text-purple-400 transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="#kontak"
+                            class="nav-link hover:text-purple-400 transition-colors duration-300">Kontak</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+
+
+        <main>
+            <section id="home" class="flex flex-col md:flex-row items-center gap-12 pt-8 md:pt-16">
+                <div class="w-full md:w-1/3 flex justify-center relative">
+                    <div class="absolute inset-0 bg-purple-600 opacity-40 rounded-full blur-3xl"></div>
+                    <img src="img/portfolio.png" alt="M Ilham Firdaus" class="relative w-64 md:w-full max-w-sm z-10">
+                </div>
+
+                <div class="w-full md:w-2/3 text-center md:text-left relative">
+                    <div class="inline-flex items-center justify-center md:justify-start relative">
+                        <img src="img/Arrow.png" alt="Arrow pointing to photo"
+                            class="absolute w-24 -top-8 -left-16 md:-top-12 md:-left-20 transform -rotate-12 z-20">
+
+                        <p class="text-lg transform -translate-y-10">Hello! Saya <span class="text-purple-400">M Ilham
+                                Firdaus</span></p>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-medium mt-4">
+                        Seorang Software Engineer yang
+                        <span class="block font-bold text-4xl md:text-5xl lg:text-6xl mt-2">
+                            Merancang <span class="text-purple-400">solusi</span> <br> dari akar <span
+                                class="text-purple-400">permasalahannya...</span>
+                        </span>
+                    </h1>
+                    <p class="text-gray-400 mt-6 text-base md:text-lg">
+                        Karena setiap baris kode harus menyelesaikan masalah nyata.
+                    </p>
+                </div>
+            </section>
+
+            <section id="tentang" class="mt-20 md:mt-25 pt-24 text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-semibold">Software Engineer | Praktisi PPIC</h2>
+                <p class="w-full mt-4 text-gray-300 text-base md:text-lg">
+                    Saat ini, saya adalah mahasiswa Teknik Informatika di Universitas Pelita Bangsa <br> sekaligus
+                    bekerja di
+                    PT Citra Nugerah Karya.
+                </p>
+                <div class="mt-10">
+                    <a href="https://drive.google.com/file/d/178MboXT934kDYejHqn4rVxlRZGI0KuBn/view?usp=sharing"
+                        class="inline-block border border-purple-400 text-purple-400 font-medium py-3 px-10 rounded hover:bg-purple-400 hover:text-white transition-all duration-300">
+                        Download CV
+                    </a>
+                </div>
+            </section>
+
+            <section class="mt-10 md:mt-15 text-center md:text-left">
+                <p class="w-full text-gray-300 text-base md:text-lg leading-relaxed">
+                    Saya adalah seorang Software Engineer dengan pengalaman nyata dalam membangun aplikasi berbasis
+                    Laravel, mengembangkan sistem AI untuk deteksi objek menggunakan YOLO, serta merancang chatbot dan
+                    analisis data melalui pemanfaatan API seperti Gemini. Terlibat langsung dalam implementasi Toyota
+                    Production System (TPS) dan metode Kanban di divisi PPIC, dengan pemahaman mendalam terkait
+                    penggunaan modul ERP (Production Planning/PP dan Materials Management/MM) guna meningkatkan
+                    efisiensi proses manufaktur berbasis data.
+                </p>
+                <p class="w-full mt-8 text-purple-400 text-base md:text-lg"><a href="#portfolio">🪄 Scroll ke bawah
+                        untuk melihat proyek saya dan temukan bagaimana saya mengintegrasikan AI ke dalam
+                        sistem manufaktur.</a>
+
+                </p>
+            </section>
+
+            <section id="pengalaman" class="mt-24 md:mt-32 pt-24">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Work Experience</h2>
+                <div class="space-y-12">
+
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-6 rounded-2xl bg-gradient-to-br from-purple-700 via-purple-500 to-pink-500 opacity-40 blur-3xl">
+                        </div>
+                        <div
+                            class="relative bg-[#1A0B2E]/60 backdrop-blur-sm border border-purple-900 rounded-xl p-6 flex flex-col md:flex-row items-center gap-6">
+                            <div
+                                class="relative z-10 w-32 h-24 flex-shrink-0 bg-white rounded-md flex items-center justify-center p-2">
+                                <img src="img/cnk.png" alt="PT. Citra Nugerah Karya Logo"
+                                    class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="relative z-10 text-center md:text-left flex-grow">
+                                <h3 class="text-xl font-semibold">CPT. Citra Nugerah Karya (2023–sekarang)</h3>
+                                <p class="text-gray-400 mt-1">PPIC Staff – Praktisi TPS dan Software Developer</p>
+                                <a href="#" id="cnk-learn-more"
+                                    class="inline-block mt-4 border border-purple-600 text-purple-400 text-xs font-medium py-1.5 px-5 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                    LEARN MORE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-6 rounded-2xl bg-gradient-to-br from-purple-700 via-purple-500 to-pink-500 opacity-40 blur-3xl">
+                        </div>
+                        <div
+                            class="relative bg-[#1A0B2E]/60 backdrop-blur-sm border border-purple-900 rounded-xl p-6 flex flex-col md:flex-row items-center gap-6">
+                            <div
+                                class="relative z-10 w-32 h-24 flex-shrink-0 bg-white rounded-md flex items-center justify-center p-2">
+                                <img src="img/daihatsu.png" alt="PT. Astra Daihatsu Motor Logo"
+                                    class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="relative z-10 text-center md:text-left flex-grow">
+                                <h3 class="text-xl font-semibold">PT. Astra Daihatsu Motor (2021–2023)</h3>
+                                <p class="text-gray-400 mt-1">Operator Produksi</p>
+                                <a href="#" id="daihatsu-learn-more"
+                                    class="inline-block mt-4 border border-purple-600 text-purple-400 text-xs font-medium py-1.5 px-5 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                    LEARN MORE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skill" class="relative mt-30 md:mt-40 pt-24 py-20 overflow-hidden">
+                <h2 class="text-2xl md:text-3xl font-semibold text-center mb-12">
+                    Berikut adalah beberapa <span class="text-purple-400">keahlian teknis</span> yang saya kuasai
+                </h2>
+
+                <div class="relative flex items-center justify-center h-[500px] md:h-[600px]">
+                    <div class="relative z-10">
+                        <div class="absolute -inset-8 bg-purple-600 opacity-50 rounded-full blur-3xl"></div>
+                        <img src="img/portfolio2.png" alt="M Ilham Firdaus" class="relative w-48 md:w-56 z-20">
+                    </div>
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <div
+                            class="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] border border-purple-800/50 rounded-full">
+                        </div>
+                        <div
+                            class="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-purple-800/40 rounded-full">
+                        </div>
+                        <div
+                            class="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] border border-purple-800/30 rounded-full">
+                        </div>
+
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -5s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/github.png" alt="GitHub" class="w-8 h-8" /></div>
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -15s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/docker.png" alt="Docker" class="w-8 h-8" /></div>
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -25s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/mysql.png" alt="MySQL" class="w-8 h-8" /></div>
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -35s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/googlecolab.png" alt="Google Colab" class="w-8 h-8" /></div>
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -45s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/vscode.png" alt="VS Code" class="w-7 h-7" /></div>
+                        <div style="--radius: 300px; --duration: 60s; animation-delay: -55s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/laravel.png" alt="Laravel" class="w-8 h-8" /></div>
+
+                        <div style="--radius: 225px; --duration: 45s; animation-delay: -3s; animation-direction: reverse;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/git.png" alt="Git" class="w-8 h-8" /></div>
+                        <div style="--radius: 225px; --duration: 45s; animation-delay: -12s; animation-direction: reverse;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python" class="w-8 h-8" /></div>
+                        <div style="--radius: 225px; --duration: 45s; animation-delay: -22s; animation-direction: reverse;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/odoo.png" alt="Odoo" class="w-7 h-7" /></div>
+                        <div style="--radius: 225px; --duration: 45s; animation-delay: -33s; animation-direction: reverse;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/yolo.png" alt="yolo" class="h-6" /></div>
+                        <div style="--radius: 225px; --duration: 45s; animation-delay: -40s; animation-direction: reverse;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/googlesheet.png" alt="Googlesheet" class="w-8 h-8" /></div>
+
+                        <div style="--radius: 150px; --duration: 30s; animation-delay: -7s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/qad.png" alt="qad" class="w-8 h-8" /></div>
+                        <div style="--radius: 150px; --duration: 30s; animation-delay: -14s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/roboflow.png" alt="roboflow" class="w-8 h-8" /></div>
+                        <div style="--radius: 150px; --duration: 30s; animation-delay: -21s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/chatgpt.png" alt="OpenAI" class="w-8 h-8" /></div>
+                        <div style="--radius: 150px; --duration: 30s; animation-delay: -28s;"
+                            class="orbit-item absolute w-12 h-12 flex items-center justify-center"><img
+                                src="img/postsql.png" alt="postsql" class="w-8 h-8" /></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="mt-24 md:mt-32 pt-24">
+                <div class="space-y-20">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="text-left">
+                            <p class="text-purple-400 text-sm">Yolo Project</p>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-2">Box Tracking & APD Violation Monitoring</h3>
+                            <div class="bg-[#1A0B2E]/80 border border-purple-900 rounded-xl p-6 mt-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Sistem deteksi pintar untuk memantau aktivitas gudang secara real-time. Deteksi
+                                    jumlah box dan pelanggaran APD menggunakan YOLO. Tampilkan data harian dalam
+                                    dashboard interaktif dan responsif. Mendukung analisis cepat dan pengambilan
+                                    keputusan berbasis data.
+                                </p>
+                            </div>
+                            <a href="https://github.com/muhammadilhamfirdaus/YOLO12_OBJET_DETECTION"
+                                class="inline-flex items-center gap-2 mt-6 border border-purple-600 text-purple-400 font-medium py-2 px-6 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                Learn More
+                                <span class="text-xl">❋</span>
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-br from-purple-700 to-pink-500 opacity-30 rounded-2xl blur-2xl">
+                            </div>
+                            <img src="img/Mask group.png" alt="Yolo Project Screenshot"
+                                class="relative rounded-lg shadow-2xl shadow-black/30">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="relative md:order-1">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-bl from-purple-700 to-pink-500 opacity-30 rounded-2xl blur-2xl">
+                            </div>
+                            <img src="img/dashboard.png" alt="Dashboard Project Screenshot"
+                                class="relative rounded-lg shadow-2xl shadow-black/30">
+                        </div>
+                        <div class="text-right md:order-2">
+                            <p class="text-purple-400 text-sm">Analist Data Project</p>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-2">Dashboard Evaluasi Produktivitas Tim
+                                Produksi</h3>
+                            <div class="bg-[#1A0B2E]/80 border border-purple-900 rounded-xl p-6 mt-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Dashboard interaktif menggunakan Google Sheets & Apps Script. Menganalisis
+                                    produktivitas operator, delay, dan realisasi planning. Menarik data kebutuhan
+                                    operator secara otomatis dari input harian. Dilengkapi grafik interaktif untuk
+                                    analisis visual yang cepat.
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 mt-6 border border-purple-600 text-purple-400 font-medium py-2 px-6 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                Learn More
+                                <span class="text-xl">❋</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="text-left">
+                            <p class="text-purple-400 text-sm">Laravel Project</p>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-2">WHITE-E: Material Management</h3>
+                            <div class="bg-[#1A0B2E]/80 border border-purple-900 rounded-xl p-6 mt-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Aplikasi web untuk mengelola stok material dan perencanaan produksi. Pantau
+                                    ketersediaan bahan baku, pemakaian, dan permintaan pembelian. Rencanakan dan monitor
+                                    produksi harian berdasarkan permintaan dan kapasitas. Buat otomatis purchase order,
+                                    penerimaan barang, dan pembaruan inventaris.
+                                </p>
+                            </div>
+                            <a href="https://github.com/muhammadilhamfirdaus/White-E"
+                                class="inline-flex items-center gap-2 mt-6 border border-purple-600 text-purple-400 font-medium py-2 px-6 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                Learn More
+                                <span class="text-xl">❋</span>
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-br from-purple-700 to-pink-500 opacity-30 rounded-2xl blur-2xl">
+                            </div>
+                            <img src="img/white-e.png" alt="Yolo Project Screenshot"
+                                class="relative rounded-lg shadow-2xl shadow-black/30">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <div class="relative md:order-1">
+                            <div
+                                class="absolute -inset-4 bg-gradient-to-bl from-purple-700 to-pink-500 opacity-30 rounded-2xl blur-2xl">
+                            </div>
+                            <img src="img/fulxas.png" alt="Dashboard Project Screenshot"
+                                class="relative rounded-lg shadow-2xl shadow-black/30">
+                        </div>
+                        <div class="text-right md:order-2">
+                            <p class="text-purple-400 text-sm">AI Project</p>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-2">Fulxas – Smart Personal Finance Assistant
+                            </h3>
+                            <div class="bg-[#1A0B2E]/80 border border-purple-900 rounded-xl p-6 mt-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Aplikasi Android untuk manajemen keuangan pribadi berbasis AI. Catat transaksi
+                                    harian dan dapatkan analisis keuangan otomatis. Didukung API Gemini untuk chatbot
+                                    dan insight finansial real-time. Tampilkan grafik keuangan serta berita ekonomi
+                                    global terkini.
+                                </p>
+                            </div>
+                            <a href="https://github.com/muhammadilhamfirdaus/Fulxas-Wallet"
+                                class="inline-flex items-center gap-2 mt-6 border border-purple-600 text-purple-400 font-medium py-2 px-6 rounded hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                Learn More
+                                <span class="text-xl">❋</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="kontak" class="mt-24 md:mt-32 pt-24">
+                <div
+                    class="max-w-full mx-auto bg-[#1A0B2E]/60 backdrop-blur-sm border border-purple-900 rounded-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-8">Kontak</h2>
+
+                    <form action="https://formspree.io/f/mpwjvojv" method="POST">
+                        <div class="space-y-6">
+                            <div>
+                                <input type="text" name="Nama" id="name" placeholder="Nama" required
+                                    class="w-full bg-[#100321]/70 border border-purple-800 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all duration-300">
+                            </div>
+                            <div>
+                                <input type="email" name="Email" id="contact" placeholder="Kontak (Email)" required
+                                    class="w-full bg-[#100321]/70 border border-purple-800 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all duration-300">
+                            </div>
+                            <div>
+                                <textarea name="Pesan" id="message" rows="5" placeholder="Pesan" required
+                                    class="w-full bg-[#100321]/70 border border-purple-800 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all duration-300"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit"
+                                class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-3 px-12 rounded-lg transition-colors duration-300">
+                                Kirim
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <div id="modal-cnk"
+            class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-[9999] opacity-0 pointer-events-none transition-opacity duration-300">
+            <div
+                class="bg-[#1A0B2E] border border-purple-800 rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative transform translate-y-4 opacity-0 transition-all duration-300">
+                <button class="modal-close-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-24 h-16 flex-shrink-0 bg-white rounded-md flex items-center justify-center p-2">
+                        <img src="img/cnk.png" alt="PT. Citra Nugerah Karya Logo"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold">CPT. Citra Nugerah Karya (2023–sekarang)</h3>
+                        <p class="text-gray-400">PPIC Staff – Praktisi TPS dan Software Developer</p>
+                    </div>
+                </div>
+
+                <h4 class="text-xl font-medium mt-6 mb-4">Deskripsi Pekerjaan:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 text-base modal-content-scroll pr-4">
+                    <li>Mengembangkan digitalisasi sirkulasi kanban berbasis Googlesheet & App Script agar selaras
+                        dengan kapasitas produksi & jadwal pengiriman.</li>
+                    <li>Mengelola kalkulasi Kanban untuk mengoptimalkan buffer stock serta menjaga kelancaran alur
+                        produksi.</li>
+                    <li>Mengelola siklus kanban melalui ERP.</li>
+                    <li>QAD ERP: Update Buffer Stock, Kanban Management, Inventory & WIP Monitoring.</li>
+                    <li>Mengedarkan Kanban ke area produksi sesuai kebutuhan dan kapasitas produksi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-daihatsu"
+            class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-[9999] opacity-0 pointer-events-none transition-opacity duration-300">
+            <div
+                class="bg-[#1A0B2E] border border-purple-800 rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative transform translate-y-4 opacity-0 transition-all duration-300">
+                <button class="modal-close-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-24 h-16 flex-shrink-0 bg-white rounded-md flex items-center justify-center p-2">
+                        <img src="img/daihatsu.png" alt="PT. Astra Daihatsu Motor Logo"
+                            class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold">PT. Astra Daihatsu Motor (2021–2023)</h3>
+                        <p class="text-gray-400">Operator Produksi</p>
+                    </div>
+                </div>
+
+                <h4 class="text-xl font-medium mt-6 mb-4">Deskripsi Pekerjaan:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 text-base modal-content-scroll pr-4">
+                    <li>Melakukan pemasangan dan penyesuaian suspensi.</li>
+                    <li>Melakukan proses setting dan pemasangan garnis backdoor.</li>
+                    <li>Melakukan penyetelan CSA (Center Side Assembly) & Flursift.</li>
+                    <li>Melaksanakan pemasangan pipa AC pada bagian chassis underbody sesuai standar prosedur kerja.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="py-10 mt-10 ">
+            <div class="text-center md:text-left">
+                <div class="max-w-md mx-auto md:mx-0">
+                    <p class="text-gray-300">Terima kasih telah mengunjungi portfolio saya.</p>
+                    <p class="text-gray-300 mt-2">Tertarik bekerja sama, berdiskusi proyek, atau sekadar bertukar
+                        ide? Saya siap membantu Anda menciptakan solusi digital yang berdampak dan efisien. Jangan
+                        ragu untuk menghubungi saya melalui:</p>
+                </div>
+
+                <p class="text-lg text-purple-400 mt-6">
+                    ilhamfirdaus6666@gmail.com
+                </p>
+
+                <div class="flex items-center justify-center md:justify-start space-x-6 mt-6">
+                    <a href="https://www.instagram.com/ilhamfirdaus7777/"
+                        class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C8.74 2 8.333.015 7.053.072 5.775.13 4.905.333 4.14.63c-.784.305-1.457.717-2.123 1.383S.935 3.356.63 4.14C.333 4.905.13 5.775.072 7.053.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.263 2.147.56 2.912.305.784.717 1.457 1.383 2.123s1.339 1.078 2.123 1.383c.765.297 1.635.499 2.912.56 1.277.057 1.684.072 4.947.072s3.67-.015 4.947-.072c1.277-.06 2.147-.263 2.912-.56.784-.305 1.457-.717 2.123-1.383s1.078-1.339 1.383-2.123c.297-.765.499-1.635.56-2.912.057-1.277.072-1.684.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.263-2.147-.56-2.912-.305-.784-.717-1.457-1.383-2.123S20.644.935 19.86.63c-.765-.297-1.635-.499-2.912-.56C15.67.015 15.26 0 12 0zm0 2.16c3.2 0 3.585.012 4.85.07 1.17.053 1.805.248 2.228.414.53.205.9.47 1.28.85s.645.75.85 1.28c.166.423.36 1.058.413 2.228.058 1.265.07 1.65.07 4.85s-.012 3.585-.07 4.85c-.053 1.17-.248 1.805-.413 2.228-.205.53-.47.9-.85 1.28-.38.38-.75.645-1.28.85-.423.166-1.058.36-2.228.413-1.265.058-1.65.07-4.85.07s-3.585-.012-4.85-.07c-1.17-.053-1.805-.248-2.228-.413-.53-.205-.9-.47-1.28-.85-.38-.38-.645-.75-.85-1.28-.166-.423-.36-1.058-.413-2.228-.058-1.265-.07-1.65-.07-4.85s.012-3.585.07-4.85c.053-1.17.248-1.805.413-2.228.205-.53.47-.9.85-1.28.38-.38.75-.645 1.28-.85.423-.166 1.058-.36 2.228-.413C8.415 2.172 8.8 2.16 12 2.16zm0 4.86c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8.16c-1.74 0-3.16-1.42-3.16-3.16s1.42-3.16 3.16-3.16 3.16 1.42 3.16 3.16-1.42 3.16-3.16 3.16zm4.905-8.23c-.7 0-1.27-.57-1.27-1.27s.57-1.27 1.27-1.27 1.27.57 1.27 1.27-.57 1.27-1.27 1.27z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/6283127079137" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.38 1.25 4.82l-1.34 4.88 5-1.32c1.41.74 3 1.17 4.67 1.17h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM12.04 3.65c4.51 0 8.25 3.73 8.25 8.25 0 4.51-3.74 8.25-8.25 8.25h-.01c-1.49 0-2.93-.4-4.19-1.12l-.3-.18-3.11.82.83-3.04-.2-.32c-.8-1.31-1.28-2.84-1.28-4.41 0-4.51 3.73-8.25 8.25-8.25zm4.52 9.5c-.25-.12-1.47-.72-1.7-.81-.22-.09-.38-.12-.54.12-.16.25-.64.81-.79.97-.14.16-.29.18-.54.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.26-1.47-1.41-1.72-.14-.25-.02-.38.1-.51.11-.11.25-.29.37-.43.13-.14.16-.25.25-.41.09-.17.04-.31-.02-.43s-.54-1.3-.74-1.78c-.2-.48-.4-.42-.55-.42h-.48c-.16 0-.42.06-.64.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.37 1 2.53.12.16 1.76 2.68 4.26 3.76 2.5 1.08 2.5.72 2.95.69.45-.03 1.47-.6 1.68-1.18.2-.58.2-1.08.15-1.18-.06-.12-.22-.18-.47-.31z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/muhammadilhamfirdaus?tab=repositories"
+                        class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href=""
+                        class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // --- Modal Logic ---
+    const cnkModal = document.getElementById('modal-cnk');
+    const daihatsuModal = document.getElementById('modal-daihatsu');
+
+    const cnkBtn = document.getElementById('cnk-learn-more');
+    const daihatsuBtn = document.getElementById('daihatsu-learn-more');
+
+    function openModal(modalElement) {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        modalElement.classList.remove('opacity-0', 'pointer-events-none');
+        modalElement.classList.add('opacity-100');
+        setTimeout(() => {
+            modalElement.querySelector('div:first-child').classList.remove('translate-y-4', 'opacity-0');
+            modalElement.querySelector('div:first-child').classList.add('translate-y-0', 'opacity-100');
+        }, 10);
+    }
+
+    function closeModal(modalElement) {
+        document.body.style.overflow = ''; // Restore scrolling
+        modalElement.querySelector('div:first-child').classList.remove('translate-y-0', 'opacity-100');
+        modalElement.querySelector('div:first-child').classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => {
+            modalElement.classList.remove('opacity-100');
+            modalElement.classList.add('opacity-0', 'pointer-events-none');
+        }, 300);
+    }
+
+    // Event Listeners for opening modals
+    cnkBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(cnkModal);
+    });
+
+    daihatsuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(daihatsuModal);
+    });
+
+    // Event Listeners for closing modals
+    [cnkModal, daihatsuModal].forEach(modal => {
+        modal.querySelector('.modal-close-btn').addEventListener('click', () => closeModal(modal));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (!cnkModal.classList.contains('opacity-0')) closeModal(cnkModal);
+            if (!daihatsuModal.classList.contains('opacity-0')) closeModal(daihatsuModal);
+        }
+    });
+</script>
+
+</html>
